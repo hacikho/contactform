@@ -3,49 +3,12 @@
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.map"></script>
 </head>
 <body>
-<form id="contactform" method="POST">
-    <div class="form-group">
-        <div class="input-group">
-            <span class="input-group-addon">Name</span>
-            <input name="form-name-input" type="text" name="name" class="form-control" required>
-                </div>
-            <div class="input-group">
-                <span class="input-group-addon">Email</span>
-                <input name="form-email-input" type="email" name="_replyto" class="form-control" required>
-                    </div>
-                <div class="input-group">
-                    <span class="input-group-addon">Subject</span>
-                    <input name="form-subject-input" type="text" name="subject" class="form-control" required>
-                        </div>
-                    <div class="input-group">
-                        <span class="input-group-addon">Description</span>
-                        <textarea name="form-description-input" name="description" class="form-control" rows="4" cols="60" required></textarea>
-                    </div>
-                    <input type="text" name="_gotcha" style="display:none" />
-                    <button id="sendMessage">Send</button>
-                        </div>
-		
-		
-        <script>
-		
-       var message = "";
+<form action="https://formspree.io/hkarahasanoglu@firstenergycorp.com" method="POST">
+  <input type="text" name="name">
+  <input type="email" name="_replyto">
+  <input type="submit" value="Send">
+</form>
+</div>
 
-$("#sendMessage").on("click", function() {
-    message = $("#contactform").serialize();
-    $.ajax({
-        url: "//formspree.io/hacikho01@gmail.com", 
-        method: "POST",
-        data: {message: message},
-        dataType: "json"
-    });
-    alert('Thanks for the email, we\'ll be in touch promptly.');
-    return false;
-});
-        </script>
-    </form>
-</div>
-<div class="modal-footer" style="background-color: #333333">
-    <button class="btn btn-danger btn-bg" data-dismiss="modal" type="button" id="form-dismiss-btn" onclick="">Close</button>
-</div>
 </body>
 </html>
