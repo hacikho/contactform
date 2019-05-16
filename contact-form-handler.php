@@ -46,20 +46,9 @@ $email_subject = "Contact form submission: $name";
  $to = $myemail;
  $message->setTo($to);
  
+ $swift->send($message, $failures)
 
-
- // send message
- if ($recipients = $swift->send($message, $failures))
- {
-     // This will let us know how many users received this message
-     echo 'Message sent out to '.$recipients.' users';
- }
- // something went wrong =(
- else
- {
-     echo "Something went wrong - ";
-     print_r($failures);
- }
+ 
 ?>
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd"> 
 <html>
