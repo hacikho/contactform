@@ -14,12 +14,26 @@
   <input type="email" name="email" placeholder="Your email">
   <input type="phone" name="phone" placeholder="Your phone">
   <textarea name="message" placeholder="Test Message"></textarea>
-  <button type="submit">Send Test</button>
+  <button id="sendMessage" type="submit">Send Test</button>
 </form>
   
 </form>
 </div>
+<script>
+  var message = "";
 
+$("#sendMessage").on("click", function() {
+    message = $("#contactform").serialize();
+    $.ajax({
+        url: "//formspree.io/hacikho01@gmail.com", 
+        method: "POST",
+        data: {message: message},
+        dataType: "json"
+    });
+    alert('Thanks for the email, we\'ll be in touch promptly.');
+    return false;
+});
+  </script>
 </body>
 </html>
 
