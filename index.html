@@ -6,33 +6,16 @@
    href = "style.css" />
 </head>
 <body>
-  <div class="container">  
 <form method="POST">
-  <form method="POST" action="https://formspree.io/YOUREMAILHERE">
-  <input type="name" name="name" placeholder="Your name">
-  <input type="sapid" name="sapid" placeholder="Your sapid">
-  <input type="email" name="email" placeholder="Your email">
-  <input type="phone" name="phone" placeholder="Your phone">
-  <textarea name="message" placeholder="Test Message"></textarea>
-  <button id="sendMessage" type="submit">Send Test</button>
-</form>
-  
+    <p>Name: </p><input type="text" name="name"><br />
+    <p>Email: </p><input type="email" name="email"><br />
+    <input type="submit" value="Send">
+  <input type="hidden" name="_next" value="hacikho.com" />
 </form>
 </div>
 <script>
-  var message = "";
-
-$("#sendMessage").on("click", function() {
-    message = $("#contactform").serialize();
-    $.ajax({
-        url: "//formspree.io/hkarahasanoglu@firstenergycorp.com", 
-        method: "POST",
-        data: {message: message},
-        dataType: "json"
-    });
-    alert('Thanks for the email, we\'ll be in touch promptly.');
-    return false;
-});
+  var contactform =  document.getElementById('formaction');
+    contactform.setAttribute('action', '//formspree.io/' + 'hkarahasanoglu' + '@' + 'firstenergycorp' + '.' + 'com');
   </script>
 </body>
 </html>
